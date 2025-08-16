@@ -1,12 +1,12 @@
+from controllers.ClassicoController import ClassicoController
 from interfaces.Menu import Menu
-from models.Classico import Classico
 from models.Aventureiro import Aventureiro
 from models.Heroico import Heroico
 import os
 
 class MenuPrincipal(Menu):
     def exibir_menu(self):
-        classico = Classico()
+        classico = ClassicoController()
         aventureiro = Aventureiro()
         heroico = Heroico()
 
