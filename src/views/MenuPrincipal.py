@@ -1,13 +1,13 @@
+from controllers.AventureiroController import AventureiroController
 from controllers.ClassicoController import ClassicoController
 from interfaces.Menu import Menu
-from models.Aventureiro import Aventureiro
 from models.Heroico import Heroico
 import os
 
 class MenuPrincipal(Menu):
     def exibir_menu(self):
         classico = ClassicoController()
-        aventureiro = Aventureiro()
+        aventureiro = AventureiroController()
         heroico = Heroico()
 
         os.system('cls' if os.name == 'nt' else 'clear')
