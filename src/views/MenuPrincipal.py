@@ -1,8 +1,11 @@
 from interfaces.Menu import Menu
+from models.Classico import Classico
 
 class MenuPrincipal(Menu):
     def exibir_menu(self):
         print("Bem-vindo ao Menu Principal!")
+
+        classico = Classico()
 
         while True:
             try:
@@ -13,7 +16,8 @@ class MenuPrincipal(Menu):
                 
                 match opcao:
                     case 1:
-                        pass
+                        classico.definir_atributos()
+                        print(classico.exibir_atributos())
                     case 2:
                         break
                     case _:
