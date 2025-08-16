@@ -1,11 +1,11 @@
 from interfaces.Menu import Menu
-from models.Aventureiro import Aventureiro
+from models.Heroico import Heroico
 
 class MenuPrincipal(Menu):
     def exibir_menu(self):
         print("Bem-vindo ao Menu Principal!")
 
-        aventureiro = Aventureiro()
+        heroico = Heroico()
 
         while True:
             try:
@@ -16,9 +16,9 @@ class MenuPrincipal(Menu):
                 
                 match opcao:
                     case 1:
-                        aventureiro.rolar_dados()
-                        aventureiro.definir_atributos()
-                        print(aventureiro.exibir_atributos())
+                        heroico.rolar_dados()
+                        heroico.definir_atributos()
+                        print(heroico.exibir_atributos())
                     case 2:
                         break
                     case _:
