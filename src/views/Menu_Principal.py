@@ -35,12 +35,18 @@ class MenuPrincipal(Menu):
                 
                 match opcao:
                     case 1:
-                        os.system('cls' if os.name == 'nt' else 'clear')
-                        print("\033[34mEscolha o estilo do personagem:\033[0m")
-                        print("1. Estilo Clássico")
-                        print("2. Estilo Aventureiro")
-                        print("3. Estilo Heroico")
-                        estilo = int(input("Escolha o estilo do personagem: "))
+                        while True:
+                            os.system('cls' if os.name == 'nt' else 'clear')
+                            try:
+                                print("\033[34mEscolha o estilo do personagem:\033[0m")
+                                print("1. Estilo Clássico")
+                                print("2. Estilo Aventureiro")
+                                print("3. Estilo Heroico")
+                                estilo = int(input("Escolha o estilo do personagem: "))
+                                if estilo in [1, 2, 3]:
+                                    break
+                            except ValueError:
+                                pass
 
                         try:
                             match estilo:
@@ -62,28 +68,39 @@ class MenuPrincipal(Menu):
                                     os.system('cls' if os.name == 'nt' else 'clear')
                                     print("Estilo inválido. Tente novamente.")
                         except ValueError:
-                            print("Entrada inválida. Por favor, insira um número.")
+                            pass
 
-                        os.system('cls' if os.name == 'nt' else 'clear')
+                        while True:
+                            os.system('cls' if os.name == 'nt' else 'clear')
+                            try:
+                                print("\033[34mEscolha a raça do personagem:\033[0m")
+                                print("1. Humano")
+                                print("2. Elfo")
+                                print("3. Anão")
+                                print("4. Meio-Elfo")
+                                print("5. Gnomo")
+                                print("6. Halfling")
+                                raca = int(input("Escolha a raça do personagem: "))
 
-                        print("\033[34mEscolha a raça do personagem:\033[0m")
-                        print("1. Humano")
-                        print("2. Elfo")
-                        print("3. Anão")
-                        print("4. Meio-Elfo")
-                        print("5. Gnomo")
-                        print("6. Halfling")
-                        raca = int(input("Escolha a raça do personagem: "))
+                                if raca in [1, 2, 3, 4, 5, 6]:
+                                    break
+                            except ValueError:
+                                pass
 
-                        os.system('cls' if os.name == 'nt' else 'clear')
-
-                        print("\033[34mEscolha a classe do personagem:\033[0m")
-                        print("1. Guerreiro")
-                        print("2. Bárbaro")
-                        print("3. Paladino")
-                        print("4. Clerigo")
-                        print("5. Ranger")
-                        classe = int(input("Escolha a classe do personagem: "))
+                        while True:
+                            os.system('cls' if os.name == 'nt' else 'clear')
+                            try:
+                                print("\033[34mEscolha a classe do personagem:\033[0m")
+                                print("1. Guerreiro")
+                                print("2. Bárbaro")
+                                print("3. Paladino")
+                                print("4. Clerigo")
+                                print("5. Ranger")
+                                classe = int(input("Escolha a classe do personagem: "))
+                                if classe in [1, 2, 3, 4, 5]:
+                                    break
+                            except ValueError:
+                                pass
 
                         self.criar_personagem(estilo, raca, classe)
                     case 2:
