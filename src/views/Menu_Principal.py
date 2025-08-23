@@ -24,7 +24,7 @@ class MenuPrincipal(Menu):
     
     def exibir_menu(self):
         os.system('cls' if os.name == 'nt' else 'clear')
-        print("Bem-vindo ao Menu Principal!")
+        print("\033[31m>----- Bem-vindo ao OldDragons! -----<\033[0m")
 
         while True:
             try:
@@ -36,7 +36,7 @@ class MenuPrincipal(Menu):
                 match opcao:
                     case 1:
                         os.system('cls' if os.name == 'nt' else 'clear')
-                        print("Escolha o estilo do personagem:")
+                        print("\033[34mEscolha o estilo do personagem:\033[0m")
                         print("1. Estilo Clássico")
                         print("2. Estilo Aventureiro")
                         print("3. Estilo Heroico")
@@ -66,7 +66,7 @@ class MenuPrincipal(Menu):
 
                         os.system('cls' if os.name == 'nt' else 'clear')
 
-                        print("Escolha a raça do personagem:")
+                        print("\033[34mEscolha a raça do personagem:\033[0m")
                         print("1. Humano")
                         print("2. Elfo")
                         print("3. Anão")
@@ -77,7 +77,7 @@ class MenuPrincipal(Menu):
 
                         os.system('cls' if os.name == 'nt' else 'clear')
 
-                        print("Escolha a classe do personagem:")
+                        print("\033[34mEscolha a classe do personagem:\033[0m")
                         print("1. Guerreiro")
                         print("2. Bárbaro")
                         print("3. Paladino")
@@ -117,7 +117,11 @@ class MenuPrincipal(Menu):
 
         personagem = Personagem(estilo_nome, raca_nome, classe_nome)
 
-        print("Personagem criado:")
-        print(f"Estilo: {personagem.estilo}")
-        print(f"Raça: {personagem.raca}")
-        print(f"Classe: {personagem.classe}")
+        os.system('cls' if os.name == 'nt' else 'clear')
+
+        print("\033[32mPersonagem criado!\033[0m")
+        print("\033[32m===============================\033[0m")
+        print(f"\033[33mEstilo: {personagem.estilo}\033[0m")
+        print(f"\033[33mRaça: {personagem.raca}\033[0m")
+        print(f"\033[33mClasse: {personagem.classe}\033[0m")
+        print("\033[32m===============================\033[0m\n")
