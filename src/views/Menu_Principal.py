@@ -18,11 +18,11 @@ from models.Ranger import Ranger
 import os
 
 class MenuPrincipal(Menu):
+    classico = ClassicoController()
+    aventureiro = AventureiroController()
+    heroico = HeroicoController()
+    
     def exibir_menu(self):
-        classico = ClassicoController()
-        aventureiro = AventureiroController()
-        heroico = HeroicoController()
-
         os.system('cls' if os.name == 'nt' else 'clear')
         print("Bem-vindo ao Menu Principal!")
 
@@ -41,6 +41,28 @@ class MenuPrincipal(Menu):
                         print("2. Estilo Aventureiro")
                         print("3. Estilo Heroico")
                         estilo = int(input("Escolha o estilo do personagem: "))
+
+                        try:
+                            match estilo:
+                                case 1:
+                                    os.system('cls' if os.name == 'nt' else 'clear')
+                                    self.classico.definir_atributos()
+                                    print(self.classico.exibir_atributos())
+                                case 2:
+                                    os.system('cls' if os.name == 'nt' else 'clear')
+                                    self.aventureiro.rolar_dados()
+                                    self.aventureiro.definir_atributos()
+                                    print(self.aventureiro.exibir_atributos())
+                                case 3:
+                                    os.system('cls' if os.name == 'nt' else 'clear')
+                                    self.heroico.rolar_dados()
+                                    self.heroico.definir_atributos()
+                                    print(self.heroico.exibir_atributos())
+                                case _:
+                                    os.system('cls' if os.name == 'nt' else 'clear')
+                                    print("Estilo inválido. Tente novamente.")
+                        except ValueError:
+                            print("Entrada inválida. Por favor, insira um número.")
 
                         os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -64,36 +86,6 @@ class MenuPrincipal(Menu):
                         classe = int(input("Escolha a classe do personagem: "))
 
                         self.criar_personagem(estilo, raca, classe)
-
-                        
-                    #     os.system('cls' if os.name == 'nt' else 'clear')
-                    #     try:
-                    #         print("1. Estilo Clássico")
-                    #         print("2. Estilo Aventureiro")
-                    #         print("3. Estilo Heroico")
-
-                    #         estilo = int(input("Escolha o estilo do personagem: "))
-
-                    #         match estilo:
-                    #             case 1:
-                    #                 os.system('cls' if os.name == 'nt' else 'clear')
-                    #                 classico.definir_atributos()
-                    #                 print(classico.exibir_atributos())
-                    #             case 2:
-                    #                 os.system('cls' if os.name == 'nt' else 'clear')
-                    #                 aventureiro.rolar_dados()
-                    #                 aventureiro.definir_atributos()
-                    #                 print(aventureiro.exibir_atributos())
-                    #             case 3:
-                    #                 os.system('cls' if os.name == 'nt' else 'clear')
-                    #                 heroico.rolar_dados()
-                    #                 heroico.definir_atributos()
-                    #                 print(heroico.exibir_atributos())
-                    #             case _:
-                    #                 os.system('cls' if os.name == 'nt' else 'clear')
-                    #                 print("Estilo inválido. Tente novamente.")
-                    #     except ValueError:
-                    #         print("Entrada inválida. Por favor, insira um número.")
                     case 2:
                         break
                     case _:
@@ -102,10 +94,6 @@ class MenuPrincipal(Menu):
                 print("Entrada inválida. Por favor, insira um número.")
 
     def criar_personagem(self, estilo, raca, classe):
-        classico = ClassicoController()
-        aventureiro = AventureiroController()
-        heroico = HeroicoController()
-
         humano = Humano()
         elfo = Elfo()
         meielfo = Meio_Elfo()
@@ -119,7 +107,7 @@ class MenuPrincipal(Menu):
         paladino = Paladino()
         ranger = Ranger()
 
-        estilos = {1: classico, 2: aventureiro, 3: heroico}
+        estilos = {1: self.classico, 2: self.aventureiro, 3: self.heroico}
         racas = {1: humano, 2: elfo, 3: anao, 4: meielfo, 5: gnomo, 6: halfling}
         classes = {1: guerreiro, 2: barbaro, 3: paladino, 4: clerigo, 5: ranger}
 
