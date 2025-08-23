@@ -16,35 +16,53 @@ class AventureiroController(EstiloController, Aventureiro):
         return soma
 
     def definir_atributos(self):
-        print(self.valores)
-        forca = int(input("Escolha um valor para Força: "))
-        self.forca = forca
-        self.valores.remove(forca)
+        while True:
+            print(self.valores)
+            forca = int(input("Escolha um valor para Força: "))
+            if forca in self.valores:
+                self.forca = forca
+                self.valores.remove(forca)
+                break
 
-        print(self.valores)
-        destreza = int(input("Escolha um valor para Destreza: "))
-        self.destreza = destreza
-        self.valores.remove(destreza)
+        while True:
+            print(self.valores)
+            destreza = int(input("Escolha um valor para Destreza: "))
+            if destreza in self.valores:
+                self.destreza = destreza
+                self.valores.remove(destreza)
+                break
 
-        print(self.valores)
-        constituicao = int(input("Escolha um valor para Constituição: "))
-        self.constituicao = constituicao
-        self.valores.remove(constituicao)
+        while True:
+            print(self.valores)
+            constituicao = int(input("Escolha um valor para Constituição: "))
+            if constituicao in self.valores:
+                self.constituicao = constituicao
+                self.valores.remove(constituicao)
+                break
 
-        print(self.valores)
-        inteligencia = int(input("Escolha um valor para Inteligência: "))
-        self.inteligencia = inteligencia
-        self.valores.remove(inteligencia)
+        while True:
+            print(self.valores)
+            inteligencia = int(input("Escolha um valor para Inteligência: "))
+            if inteligencia in self.valores:
+                self.inteligencia = inteligencia
+                self.valores.remove(inteligencia)
+                break
 
-        print(self.valores)
-        sabedoria = int(input("Escolha um valor para Sabedoria: "))
-        self.sabedoria = sabedoria
-        self.valores.remove(sabedoria)
+        while True:
+            print(self.valores)
+            sabedoria = int(input("Escolha um valor para Sabedoria: "))
+            if sabedoria in self.valores:
+                self.sabedoria = sabedoria
+                self.valores.remove(sabedoria)
+                break
 
-        print(self.valores)
-        carisma = int(input("Escolha um valor para Carisma: "))
-        self.carisma = carisma
-        self.valores.remove(carisma)
+        while True:
+            print(self.valores)
+            carisma = int(input("Escolha um valor para Carisma: "))
+            if carisma in self.valores:
+                self.carisma = carisma
+                self.valores.remove(carisma)
+                break
         
     def exibir_atributos(self):
         atributos = (
