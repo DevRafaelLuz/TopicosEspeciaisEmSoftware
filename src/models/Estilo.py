@@ -1,4 +1,4 @@
-class Personagem():
+class Estilo():
     def __init__(self, forca, destreza, constituicao, inteligencia, sabedoria, carisma):
         self.forca = forca
         self.destreza = destreza

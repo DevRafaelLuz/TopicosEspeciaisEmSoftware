@@ -1,6 +1,6 @@
-from models.Personagem import Personagem
+from models.Estilo import Estilo
 
-class Aventureiro(Personagem):
+class Aventureiro(Estilo):
     def __init__(self, forca, destreza, constituicao, inteligencia, sabedoria, carisma):
         super().__init__(forca, destreza, constituicao, inteligencia, sabedoria, carisma)
 

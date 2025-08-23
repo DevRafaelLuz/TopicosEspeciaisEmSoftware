@@ -1,0 +1,2 @@
+class Barbaro:
+    pass
