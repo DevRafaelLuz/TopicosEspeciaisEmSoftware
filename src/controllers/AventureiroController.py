@@ -47,11 +47,12 @@ class AventureiroController(EstiloController, Aventureiro):
         self.valores.remove(carisma)
         
     def exibir_atributos(self):
-        return {
-            "Forca": self.forca,
-            "Destreza": self.destreza,
-            "Constituicao": self.constituicao,
-            "Inteligencia": self.inteligencia,
-            "Sabedoria": self.sabedoria,
-            "Carisma": self.carisma
-        }
+        atributos = (
+            f"Força: {self.forca}\n"
+            f"Destreza: {self.destreza}\n"
+            f"Constituição: {self.constituicao}\n"
+            f"Inteligência: {self.inteligencia}\n"
+            f"Sabedoria: {self.sabedoria}\n"
+            f"Carisma: {self.carisma}"
+        )
+        return atributos

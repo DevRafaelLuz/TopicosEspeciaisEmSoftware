@@ -2,7 +2,7 @@ from controllers.EstiloController import EstiloController
 from models.Heroico import Heroico
 import random
 
-class HeroicoController(EstiloController ,Heroico):
+class HeroicoController(EstiloController, Heroico):
     valores = []
 
     def rolar_dados(self):
@@ -48,11 +48,12 @@ class HeroicoController(EstiloController ,Heroico):
         self.valores.remove(carisma)
 
     def exibir_atributos(self):
-        return {
-            "Forca": self.forca,
-            "Destreza": self.destreza,
-            "Constituicao": self.constituicao,
-            "Inteligencia": self.inteligencia,
-            "Sabedoria": self.sabedoria,
-            "Carisma": self.carisma
-        }
+        atributos = (
+            f"Força: {self.forca}\n"
+            f"Destreza: {self.destreza}\n"
+            f"Constituição: {self.constituicao}\n"
+            f"Inteligência: {self.inteligencia}\n"
+            f"Sabedoria: {self.sabedoria}\n"
+            f"Carisma: {self.carisma}"
+        )
+        return atributos

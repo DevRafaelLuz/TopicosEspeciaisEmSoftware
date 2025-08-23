@@ -119,9 +119,23 @@ class MenuPrincipal(Menu):
 
         os.system('cls' if os.name == 'nt' else 'clear')
 
-        print("\033[32mPersonagem criado!\033[0m")
+        print("\033[34mPersonagem criado!\033[0m")
         print("\033[32m===============================\033[0m")
         print(f"\033[33mEstilo: {personagem.estilo}\033[0m")
         print(f"\033[33mRaça: {personagem.raca}\033[0m")
         print(f"\033[33mClasse: {personagem.classe}\033[0m")
+        print("\033[32m-------------------------------\033[0m")
+        print("\033[34mAtributos:\033[0m")
+        print(self.exibir_atributos(estilo))
         print("\033[32m===============================\033[0m\n")
+        
+    def exibir_atributos(self, estilo):
+        match estilo:
+            case 1:
+                return self.classico.exibir_atributos()
+            case 2:
+                return self.aventureiro.exibir_atributos()
+            case 3:
+                return self.heroico.exibir_atributos()
+            case _:
+                return "Estilo inválido."
