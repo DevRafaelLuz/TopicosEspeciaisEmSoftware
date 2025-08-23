@@ -1,2 +1,3 @@
 class Guerreiro:
-    pass
+    def __str__(self):
+        return "Guerreiro"

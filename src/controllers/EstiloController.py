@@ -1,7 +1,7 @@
 from abc import abstractmethod
 from interfaces.Atributos import Atributos
 
-class PersonagemController(Atributos):
+class EstiloController(Atributos):
     @abstractmethod
     def rolar_dados(self):
         pass

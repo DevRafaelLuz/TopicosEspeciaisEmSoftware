@@ -1,4 +1,4 @@
-from views.MenuPrincipal import MenuPrincipal
+from views.Menu_Principal import MenuPrincipal
 
 def main():
     menu = MenuPrincipal()

@@ -1,8 +1,8 @@
-from controllers.PersonagemController import PersonagemController
+from controllers.EstiloController import EstiloController
 from models.Classico import Classico
 import random
 
-class ClassicoController(PersonagemController, Classico):
+class ClassicoController(EstiloController, Classico):
     classico = Classico()
 
     def rolar_dados(self):

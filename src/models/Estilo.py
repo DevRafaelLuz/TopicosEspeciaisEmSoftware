@@ -1,4 +1,6 @@
-class Estilo():
+from abc import ABC
+
+class Estilo(ABC):
     def __init__(self, forca, destreza, constituicao, inteligencia, sabedoria, carisma):
         self.forca = forca
         self.destreza = destreza

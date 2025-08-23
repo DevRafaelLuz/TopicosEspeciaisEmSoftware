@@ -1,8 +1,8 @@
-from controllers.PersonagemController import PersonagemController
+from controllers.EstiloController import EstiloController
 from models.Aventureiro import Aventureiro
 import random
 
-class AventureiroController(PersonagemController, Aventureiro):
+class AventureiroController(EstiloController, Aventureiro):
     aventureiro = Aventureiro()
     valores = []
 

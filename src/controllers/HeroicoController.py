@@ -1,8 +1,8 @@
-from controllers.PersonagemController import PersonagemController
+from controllers.EstiloController import EstiloController
 from models.Heroico import Heroico
 import random
 
-class HeroicoController(PersonagemController ,Heroico):
+class HeroicoController(EstiloController ,Heroico):
     valores = []
 
     def rolar_dados(self):
