@@ -20,7 +20,7 @@ class AventureiroController(EstiloController, Aventureiro):
             print(self.valores)
             forca = int(input("Escolha um valor para Força: "))
             if forca in self.valores:
-                self.forca = forca
+                self.aventureiro.forca = forca
                 self.valores.remove(forca)
                 break
 
@@ -28,7 +28,7 @@ class AventureiroController(EstiloController, Aventureiro):
             print(self.valores)
             destreza = int(input("Escolha um valor para Destreza: "))
             if destreza in self.valores:
-                self.destreza = destreza
+                self.aventureiro.destreza = destreza
                 self.valores.remove(destreza)
                 break
 
@@ -36,7 +36,7 @@ class AventureiroController(EstiloController, Aventureiro):
             print(self.valores)
             constituicao = int(input("Escolha um valor para Constituição: "))
             if constituicao in self.valores:
-                self.constituicao = constituicao
+                self.aventureiro.constituicao = constituicao
                 self.valores.remove(constituicao)
                 break
 
@@ -44,7 +44,7 @@ class AventureiroController(EstiloController, Aventureiro):
             print(self.valores)
             inteligencia = int(input("Escolha um valor para Inteligência: "))
             if inteligencia in self.valores:
-                self.inteligencia = inteligencia
+                self.aventureiro.inteligencia = inteligencia
                 self.valores.remove(inteligencia)
                 break
 
@@ -52,7 +52,7 @@ class AventureiroController(EstiloController, Aventureiro):
             print(self.valores)
             sabedoria = int(input("Escolha um valor para Sabedoria: "))
             if sabedoria in self.valores:
-                self.sabedoria = sabedoria
+                self.aventureiro.sabedoria = sabedoria
                 self.valores.remove(sabedoria)
                 break
 
@@ -60,17 +60,9 @@ class AventureiroController(EstiloController, Aventureiro):
             print(self.valores)
             carisma = int(input("Escolha um valor para Carisma: "))
             if carisma in self.valores:
-                self.carisma = carisma
+                self.aventureiro.carisma = carisma
                 self.valores.remove(carisma)
                 break
         
     def exibir_atributos(self):
-        atributos = (
-            f"Força: {self.forca}\n"
-            f"Destreza: {self.destreza}\n"
-            f"Constituição: {self.constituicao}\n"
-            f"Inteligência: {self.inteligencia}\n"
-            f"Sabedoria: {self.sabedoria}\n"
-            f"Carisma: {self.carisma}"
-        )
-        return atributos
+        return super().exibir_atributos(self.aventureiro)
