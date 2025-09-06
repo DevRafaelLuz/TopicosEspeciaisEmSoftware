@@ -1,4 +1,4 @@
-from models.Raca import Raca
+from models.racas.Raca import Raca
 
 class Elfo(Raca):
     def __init__(self, movimento = 9, infravisao = 18, alinhamento = "Neutro", habilidades = {"Percepção Natural", "Graciosos", "Treinamento Racial", "Imunidade"}):

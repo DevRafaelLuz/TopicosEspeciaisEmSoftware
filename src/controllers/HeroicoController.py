@@ -1,5 +1,5 @@
 from controllers.EstiloController import EstiloController
-from models.Heroico import Heroico
+from models.estilos.Heroico import Heroico
 import random
 
 class HeroicoController(EstiloController, Heroico):

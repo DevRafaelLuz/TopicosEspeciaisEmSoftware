@@ -1,4 +1,4 @@
-from models.Raca import Raca
+from models.racas.Raca import Raca
 
 class Anao(Raca):
     def __init__(self, movimento = 6, infravisao = 18, alinhamento = "Ordem", habilidades = {"Mineradores", "Vigoroso", "Armas Grandes", "Inimigos"}):

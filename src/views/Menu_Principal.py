@@ -2,18 +2,18 @@ from controllers.AventureiroController import AventureiroController
 from controllers.ClassicoController import ClassicoController
 from controllers.HeroicoController import HeroicoController
 from interfaces.Menu import Menu
-from models.Anao import Anao
-from models.Barbaro import Barbaro
-from models.Clerigo import Clerigo
-from models.Elfo import Elfo
-from models.Gnomo import Gnomo
-from models.Guerreiro import Guerreiro
-from models.Halfling import Halfling
-from models.Humano import Humano
-from models.Meio_Elfo import Meio_Elfo
-from models.Paladino import Paladino
+from models.racas.Anao import Anao
+from models.classes.Barbaro import Barbaro
+from models.classes.Clerigo import Clerigo
+from models.racas.Elfo import Elfo
+from models.racas.Gnomo import Gnomo
+from models.classes.Guerreiro import Guerreiro
+from models.racas.Halfling import Halfling
+from models.racas.Humano import Humano
+from models.racas.Meio_Elfo import Meio_Elfo
+from models.classes.Paladino import Paladino
 from models.Personagem import Personagem
-from models.Ranger import Ranger
+from models.classes.Ranger import Ranger
 
 import os
 

@@ -1,5 +1,5 @@
 from controllers.EstiloController import EstiloController
-from models.Aventureiro import Aventureiro
+from models.estilos.Aventureiro import Aventureiro
 import random
 
 class AventureiroController(EstiloController, Aventureiro):

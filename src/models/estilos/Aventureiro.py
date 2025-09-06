@@ -1,6 +1,6 @@
-from models.Estilo import Estilo
+from models.estilos.Estilo import Estilo
 
-class Classico(Estilo):
+class Aventureiro(Estilo):
     def __init__(self, forca, destreza, constituicao, inteligencia, sabedoria, carisma):
         super().__init__(forca, destreza, constituicao, inteligencia, sabedoria, carisma)
 
@@ -8,4 +8,4 @@ class Classico(Estilo):
         pass
 
     def __str__(self):
-        return "Clássico"
+        return "Aventureiro"

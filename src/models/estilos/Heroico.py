@@ -1,4 +1,4 @@
-from models.Estilo import Estilo
+from models.estilos.Estilo import Estilo
 
 class Heroico(Estilo):
     def __init__(self, forca, destreza, constituicao, inteligencia, sabedoria, carisma):

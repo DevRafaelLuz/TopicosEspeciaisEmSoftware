@@ -1,5 +1,5 @@
 from controllers.EstiloController import EstiloController
-from models.Classico import Classico
+from models.estilos.Classico import Classico
 import random
 
 class ClassicoController(EstiloController, Classico):
