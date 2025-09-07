@@ -1,0 +1,51 @@
+body {
+    background-image: url("/static/images/background-criacao-personagem.jpg");
+    background-size: cover;
+    font-family: 'MedievalSharp', cursive;
+    color: #3b2f2f;
+}
+
+header {
+    text-align: center;
+    color: white;
+}
+
+main {
+    display: flex;
+    place-content: center;
+    
+    & form {
+        width: 65%;
+        background-color: rgba(255, 248, 220, 0.85);
+        border: 3px solid #5c3d2e;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 15px #000;
+
+        & input, select, textarea, button {
+            font-family: 'MedievalSharp', cursive;
+            background-color: #f5f0e1;
+            border: 2px solid #5c3d2e;
+            border-radius: 5px;
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        & input {
+            width: 98% !important;
+        }
+
+        & button {
+            background-color: #8b5a2b;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        & button:hover {
+            transform: scale(1.05);
+            background-color: #a0522d;
+        }
+    }
+}

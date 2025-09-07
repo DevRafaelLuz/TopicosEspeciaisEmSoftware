@@ -1,6 +1,8 @@
 body {
     background-image: url("/static/images/background-homepage.png");
     background-size: cover;
+    font-family: 'MedievalSharp', cursive;
+    color: #3b2f2f;
 }
 
 header {
@@ -11,7 +13,7 @@ header {
 main {
     display: flex;
     place-content: center;
-    margin-top: 40px;
+    margin-top: 35px;
 
     & div {
         width: 35%;
