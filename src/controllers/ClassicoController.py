@@ -6,10 +6,14 @@ class ClassicoController(EstiloController, Classico):
     classico = Classico()
 
     def rolar_dados(self):
-        soma = 0
-        for _ in range(3):
-            soma += random.randint(1, 6)
-        return soma
+        atributos = ['forca', 'destreza', 'constituicao', 'inteligencia', 'sabedoria', 'carisma']
+        valores = []
+
+        for _ in range(6):
+            soma = sum(random.randint(1, 6) for _ in range(3))
+            valores.append(soma)
+
+        return dict(zip(atributos, valores))
     
     def definir_atributos(self):
         self.classico.forca = self.rolar_dados()

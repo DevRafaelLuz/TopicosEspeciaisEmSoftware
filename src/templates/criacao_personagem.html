@@ -15,27 +15,30 @@
         <main>
             <form method="POST">
                 <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required><br><br>
+                <input type="text" id="nome" name="nome" required {% if bloquear_campos %}disabled{% endif %}>
 
                 <label for="estilo">Estilo:</label>
-                <select name="estilo" id="estilo">
-                    <option value="classico">Clássico</option>
-                    <option value="aventureiro">Aventureiro</option>
-                    <option value="heroico">Heroíco</option>
-                </select><br><br>
+                <select name="estilo" id="estilo" {% if bloquear_campos %}disabled{% endif %}>
+                    <option value="selecione">Selecione</option>
+                    <option value="classico" {% if estilo == 'classico' %}selected{% endif %}>Clássico</option>
+                    <option value="aventureiro" {% if estilo == 'aventureiro' %}selected{% endif %}>Aventureiro</option>
+                    <option value="heroico" {% if estilo == 'heroico' %}selected{% endif %}>Heroico</option>
+                </select>
 
                 <label for="raca">Raça:</label>
-                <select id="raca" name="raca">
+                <select name="raca" id="raca" {% if bloquear_campos %}disabled{% endif %}>
+                    <option value="selecione">Selecione</option>
                     <option value="humano">Humano</option>
                     <option value="elfo">Elfo</option>
                     <option value="meio-elfo">Meio-Elfo</option>
                     <option value="anao">Anão</option>
                     <option value="gnomo">Gnomo</option>
                     <option value="halfling">Halfling</option>
-                </select><br><br>
+                </select>
 
                 <label for="classe">Classe:</label>
-                <select id="classe" name="classe">
+                <select name="classe" id="classe" {% if bloquear_campos %}disabled{% endif %}>
+                    <option value="selecione">Selecione</option>
                     <option value="guerreiro">Guerreiro</option>
                     <option value="paladino">Paladino</option>
                     <option value="barbaro">Barbaro</option>
@@ -43,29 +46,57 @@
                     <option value="clerigo">Ranger</option>
                 </select><br><br>
 
+                {% if valores_rolados %}
+                <div class="valores-rolados">
+                    <h3>Valores Disponíveis:</h3>
+                    <div style="display: flex; gap: 10px;">
+                    {% if valores_rolados is mapping %}
+                        {% for atributo, valor in valores_rolados.items() %}
+                        <span class="valor">{{ valor }}</span>
+                        {% endfor %}
+                    {% else %}
+                        {% for valor in valores_rolados %}
+                        <span class="valor">{{ valor }}</span>
+                        {% endfor %}
+                    {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if estilo == 'classico' and valores_rolados and valores_rolados is mapping %}
                 <fieldset>
-                    <legend>Atributos</legend>
-                    <label for="forca">Força:</label>
-                    <input type="number" id="forca" name="forca" min="1" max="20"><br>
+                <legend>Atributos</legend>
+                {% for atributo, valor in valores_rolados.items() %}
+                    <label for="{{ atributo }}">{{ atributo|capitalize }}:</label>
+                    <input type="text" name="{{ atributo }}" id="{{ atributo }}" value="{{ valor }}" readonly>
+                    <input type="hidden" name="{{ atributo }}" value="{{ valor }}">
+                    <br>
+                {% endfor %}
+                </fieldset><br><br>
+                {% endif %}
 
-                    <label for="destreza">Destreza:</label>
-                    <input type="number" id="destreza" name="destreza" min="1" max="20"><br>
-
-                    <label for="constituicao">Constituição:</label>
-                    <input type="number" id="constituicao" name="constituicao" min="1" max="20"><br>
-
-                    <label for="inteligencia">Inteligência:</label>
-                    <input type="number" id="inteligencia" name="inteligencia" min="1" max="20"><br>
-
-                    <label for="sabedoria">Sabedoria:</label>
-                    <input type="number" id="sabedoria" name="sabedoria" min="1" max="20"><br>
-
-                    <label for="carisma">Carisma:</label>
-                    <input type="number" id="carisma" name="carisma" min="1" max="20"><br>
-                </fieldset><br>
+                {% if bloquear_campos and valores_rolados and estilo != 'classico' %}
+                <fieldset>
+                <legend>Atributos</legend>
+                {% set atributos = ['forca', 'destreza', 'constituicao', 'inteligencia', 'sabedoria', 'carisma'] %}
+                {% for atributo in atributos %}
+                <label for="{{ atributo }}">{{ atributo|capitalize }}:</label>
+                <select name="{{ atributo }}" id="{{ atributo }}" class="atributo-select">
+                    <option value="selecione">Selecione</option>
+                    {% for valor in valores_rolados %}
+                    <option value="{{ valor }}">{{ valor }}</option>
+                    {% endfor %}
+                </select><br>
+                {% endfor %}
+                </fieldset><br><br>
+                {% endif %}
 
                 <button type="submit">Criar Personagem</button>
             </form>
         </main>
+        <script id="valores-json" type="application/json">
+            {{ valores_rolados | tojson }}
+        </script>
+        <script src="{{ url_for('static', filename='scripts/Atributos.js') }}"></script>
     </body>
 </html>

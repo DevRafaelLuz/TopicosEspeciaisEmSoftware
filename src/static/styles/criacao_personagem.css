@@ -44,8 +44,35 @@ main {
         }
 
         & button:hover {
-            transform: scale(1.05);
+            transform: scale(1.01);
             background-color: #a0522d;
+        }
+
+        & .valores-rolados {
+            display: flex;
+            place-items: center;
+            flex-direction: column;
+        }
+
+        & .valor {
+            background-color: #f5f0e1;
+            border: 2px solid #5c3d2e;
+            border-radius: 5px;
+            padding: 8px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        & select:disabled, input:disabled {
+            background-color: #ddd;
+            color: #555;
+            cursor: not-allowed;
+        }
+
+        & input[readonly] {
+            background-color: #eee;
+            color: #333;
+            border: 1px solid #999;
         }
     }
 }
