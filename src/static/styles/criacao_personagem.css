@@ -162,15 +162,14 @@ main {
     }
 
     & .personagem-final form {
-        display: flex;
-        margin-right: 10px;
+        margin: auto;
         text-align: center;
         margin-top: 20px;
     }
 
     & .personagem-final button {
-        padding: 10px 20px;
-        margin: 0 100px;
+        padding: 10px 0;
+        margin: auto;
         font-weight: bold;
         background-color: #4caf50;
         color: white;
