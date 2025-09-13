@@ -36,3 +36,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   atualizarSelects();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const definirBtn = document.getElementById("definir-atributos-btn");
+  const atributosContainer = document.getElementById("atributos-container");
+
+  if (definirBtn && atributosContainer) {
+    definirBtn.addEventListener("click", function () {
+      atributosContainer.style.display = "block";
+      definirBtn.style.display = "none";
+    });
+  }
+});

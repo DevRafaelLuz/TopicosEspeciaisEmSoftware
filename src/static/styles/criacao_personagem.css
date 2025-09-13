@@ -74,5 +74,113 @@ main {
             color: #333;
             border: 1px solid #999;
         }
+
+        & .personagem-final {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+
+        & .personagem-final h2 {
+            margin-bottom: 10px;
+        }
+
+        & .personagem-final ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        & .personagem-final li {
+            margin-bottom: 5px;
+        }
+
+        & #definir-atributos-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-weight: bold;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        & #definir-atributos-btn:hover {
+            background-color: #45a049;
+        }
+    }
+
+    & .personagem-final {
+        width: 65%;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.95);
+        border: 3px solid #5c3d2e;
+        border-radius: 10px;
+        box-shadow: 0 0 15px #000;
+        color: #3b2f2f;
+        font-family: 'MedievalSharp', cursive;
+    }
+
+    & .personagem-final h2 {
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 1.8em;
+        color: #5c3d2e;
+    }
+
+    & .personagem-final p {
+        margin: 5px 0;
+        font-size: 1.1em;
+    }
+
+    & .personagem-final fieldset {
+        margin-top: 15px;
+        border: 2px solid #8b5a2b;
+        border-radius: 8px;
+        padding: 10px;
+        background-color: #f5f0e1;
+    }
+
+    & .personagem-final legend {
+        font-weight: bold;
+        font-size: 1.2em;
+        color: #5c3d2e;
+    }
+
+    & .personagem-final ul {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 10px;
+    }
+
+    & .personagem-final li {
+        margin-bottom: 6px;
+        font-size: 1em;
+    }
+
+    & .personagem-final form {
+        display: flex;
+        margin-right: 10px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    & .personagem-final button {
+        padding: 10px 20px;
+        margin: 0 100px;
+        font-weight: bold;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: 'MedievalSharp', cursive;
+    }
+
+    & .personagem-final button:hover {
+        background-color: #45a049;
     }
 }
