@@ -105,24 +105,35 @@
 
                 {% if personagem_criado %}
                 <section class="personagem-final">
-                    <h2>Personagem Criado</h2>
-                    <p><strong>Nome:</strong> {{ personagem_criado.nome }}</p>
-                    <p><strong>Estilo:</strong> {{ personagem_criado.estilo|capitalize }}</p>
-                    <p><strong>Raça:</strong> {{ personagem_criado.raca|capitalize }}</p>
-                    <p><strong>Classe:</strong> {{ personagem_criado.classe|capitalize }}</p>
+                <h2>Personagem Criado</h2>
+                <p><strong>Nome:</strong> {{ personagem_criado.nome }}</p>
+                <p><strong>Estilo:</strong> {{ personagem_criado.estilo|capitalize }}</p>
+                <p><strong>Raça:</strong> {{ personagem_criado.raca|capitalize }}</p>
+                <p><strong>Classe:</strong> {{ personagem_criado.classe|capitalize }}</p>
 
-                    <fieldset>
-                        <legend>Atributos</legend>
-                        <ul>
-                        {% for atributo, valor in personagem_criado.atributos.items() %}
-                            <li><strong>{{ atributo|capitalize }}:</strong> {{ valor }}</li>
-                        {% endfor %}
-                        </ul>
-                    </fieldset>
+                <fieldset>
+                    <legend>Atributos</legend>
+                    <ul>
+                    {% for atributo, valor in personagem_criado.atributos.items() %}
+                        <li><strong>{{ atributo|capitalize }}:</strong> {{ valor }}</li>
+                    {% endfor %}
+                    </ul>
+                </fieldset>
 
-                    <form method="GET">
-                        <button type="submit">Criar Novo Personagem</button>
-                    </form>
+                {% if personagem_criado.habilidades %}
+                <fieldset>
+                    <legend>Habilidades Raciais</legend>
+                    <ul>
+                    {% for habilidade in personagem_criado.habilidades %}
+                        <li>{{ habilidade }}</li>
+                    {% endfor %}
+                    </ul>
+                </fieldset>
+                {% endif %}
+
+                <form method="GET">
+                    <button type="submit">Criar Novo Personagem</button>
+                </form>
                 </section>
                 {% endif %}
             </main>
